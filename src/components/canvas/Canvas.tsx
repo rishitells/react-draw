@@ -2,14 +2,14 @@ import {useEffect, useRef} from 'react'
 
 const Canvas = () => {
   const canvasEl = useRef<HTMLCanvasElement>(null)
-  const context = useRef<CanvasRenderingContext2D | null>()
+  const context = useRef<CanvasRenderingContext2D>()
 
   useEffect(() => {
     if (canvasEl && canvasEl.current) {
-      const width = (canvasEl.current.width = window.innerWidth)
-      const height = (canvasEl.current.height = window.innerHeight)
-      context.current = canvasEl.current.getContext('2d')
-      console.log({width, height, context})
+      canvasEl.current.width = window.innerWidth
+      canvasEl.current.height = window.innerHeight
+      context.current = canvasEl.current.getContext('2d')!
+      context.current!.fillRect(0, 0, 100, 100)
     }
   }, [])
 
