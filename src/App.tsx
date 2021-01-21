@@ -1,7 +1,7 @@
 import {Fragment} from 'react'
 import {createGlobalStyle} from 'styled-components'
 
-import Canvas from './components/canvas/Canvas'
+import DrawArea from './components/drawArea/DrawArea'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,7 +14,7 @@ function App() {
   return (
     <Fragment>
       <GlobalStyle />
-      <Canvas />
+      <DrawArea />
     </Fragment>
   )
 }
