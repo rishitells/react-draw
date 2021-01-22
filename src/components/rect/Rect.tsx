@@ -3,23 +3,21 @@ type RectProps = {
   y: string
   width: string
   height: string
-  stroke: string
   fill: string
-  strokeWidth: string
-  handleClick: (e: any) => void
+  handleMouseDown: (e: any) => void
+  handleMouseUp: (e: any) => void
 }
 
-const Rect = ({x, y, width, height, stroke, fill, strokeWidth, handleClick}: RectProps) => {
+const Rect = ({x, y, width, height, fill, handleMouseDown, handleMouseUp}: RectProps) => {
   return (
     <rect
-      onClick={handleClick}
       x={x}
       y={y}
       width={width}
       height={height}
-      stroke={stroke}
       fill={fill}
-      strokeWidth={strokeWidth}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
     />
   )
 }
